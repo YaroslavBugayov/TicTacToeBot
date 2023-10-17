@@ -1,0 +1,20 @@
+{
+  "name": "tictactoebot",
+  "version": "1.0.0",
+  "description": "telegram bot",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "dev": "ts-node-dev index.ts"
+  },
+  "author": "bugayov",
+  "license": "MIT",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "telegraf": "^4.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4"
+  }
+}
