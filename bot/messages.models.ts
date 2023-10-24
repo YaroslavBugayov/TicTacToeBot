@@ -43,6 +43,33 @@ export const messagesModels = {
                 }
             }
         }
+    },
+
+    gameField() {
+        return {
+            text: `Game started`,
+            extra: {
+                reply_markup: {
+                    inline_keyboard: [
+                        [
+                            { text: '0', callback_data: 'no' },
+                            { text: '1', callback_data: 'no' },
+                            { text: '2', callback_data: 'no' },
+                        ],
+                        [
+                            { text: '3', callback_data: 'no' },
+                            { text: '4', callback_data: 'no' },
+                            { text: '5', callback_data: 'no' },
+                        ],
+                        [
+                            { text: '6', callback_data: 'no' },
+                            { text: '7', callback_data: 'no' },
+                            { text: '8', callback_data: 'no' },
+                        ]
+                    ]
+                }
+            }
+        }
     }
 
 }
