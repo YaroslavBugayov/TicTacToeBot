@@ -45,26 +45,26 @@ export const messagesModels = {
         }
     },
 
-    gameField() {
+    gameField(player: string, matrix: number[][] = [[0,0,0],[0,0,0],[0,0,0]]) {
         return {
-            text: `Game started`,
+            text: `${player} player makes move`,
             extra: {
                 reply_markup: {
                     inline_keyboard: [
                         [
-                            { text: '0', callback_data: 'no' },
-                            { text: '1', callback_data: 'no' },
-                            { text: '2', callback_data: 'no' },
+                            { text: numToText(matrix[0][0]), callback_data: '00' },
+                            { text: numToText(matrix[0][1]), callback_data: '01' },
+                            { text: numToText(matrix[0][2]), callback_data: '02' },
                         ],
                         [
-                            { text: '3', callback_data: 'no' },
-                            { text: '4', callback_data: 'no' },
-                            { text: '5', callback_data: 'no' },
+                            { text: numToText(matrix[1][0]), callback_data: '10' },
+                            { text: numToText(matrix[1][1]), callback_data: '11' },
+                            { text: numToText(matrix[1][2]), callback_data: '12' },
                         ],
                         [
-                            { text: '6', callback_data: 'no' },
-                            { text: '7', callback_data: 'no' },
-                            { text: '8', callback_data: 'no' },
+                            { text: numToText(matrix[2][0]), callback_data: '20' },
+                            { text: numToText(matrix[2][1]), callback_data: '21' },
+                            { text: numToText(matrix[2][2]), callback_data: '22' },
                         ]
                     ]
                 }
@@ -72,4 +72,15 @@ export const messagesModels = {
         }
     }
 
+}
+
+function numToText(num: number): string {
+    switch (num) {
+        case 1:
+            return 'X'
+        case -1:
+            return 'O'
+        default:
+            return ' '
+    }
 }
